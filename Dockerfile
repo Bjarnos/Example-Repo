@@ -9,6 +9,4 @@ RUN git clone https://github.com/synzen/MonitoRSS.git /tmp/monitorss && \
     rm -rf /tmp/monitorss && \
     npm install
 
-COPY .env .env
-
 CMD ["npm", "run", "start"]
