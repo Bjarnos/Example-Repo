@@ -1,0 +1,2 @@
+listenerFiles:
+  - ./src/listeners/dmHello.js
