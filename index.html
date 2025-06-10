@@ -1,1 +1,69 @@
-Shop hier je nieuwe selfie technologie!
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imagine je leest dit</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #0d0d0d;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+    }
+
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 3em;
+      text-align: center;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .dot {
+      position: absolute;
+      bottom: -20px;
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: rise linear infinite;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0);
+        opacity: 0.4;
+      }
+      100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="center-text">Shop hier je nieuwe selfie technologie!</div>
+
+  <script>
+    const numDots = 80;
+    for (let i = 0; i < numDots; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      dot.style.left = Math.random() * 100 + 'vw';
+      dot.style.width = dot.style.height = Math.random() * 6 + 4 + 'px';
+      dot.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      dot.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(dot);
+    }
+  </script>
+</body>
+</html>
